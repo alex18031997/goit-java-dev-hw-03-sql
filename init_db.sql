@@ -7,7 +7,7 @@ USE MegaSoft;
 -- Створення таблиці "worker"
 CREATE TABLE worker (
     ID INT AUTO_INCREMENT PRIMARY KEY,
-    NAME VARCHAR(1000) NOT NULL,
+    NAME VARCHAR(1000),
     BIRTHDAY DATE CHECK (YEAR(BIRTHDAY) > 1900),
     LEVEL ENUM('Trainee', 'Junior', 'Middle', 'Senior') NOT NULL,
     SALARY INT CHECK (SALARY >= 100 AND SALARY <= 100000)
@@ -16,7 +16,7 @@ CREATE TABLE worker (
 -- Створення таблиці "client"
 CREATE TABLE client (
     ID INT AUTO_INCREMENT PRIMARY KEY,
-    NAME VARCHAR(1000) NOT NULL
+    NAME VARCHAR(1000)
 );
 
 -- Створення таблиці "project"

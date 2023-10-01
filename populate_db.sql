@@ -18,11 +18,11 @@ VALUES
 -- Додавання клієнтів
 INSERT INTO client (NAME)
 VALUES
-    ('ABC Corporation'),
-    ('XYZ Inc.'),
-    ('Tech Solutions Ltd.'),
-    ('Global Innovations'),
-    ('Software Express');
+    ('privatBank'),
+    ('pumbBank'),
+    ('a-bank'),
+    ('sens-bank'),
+    ('ochad-bank');
 
 -- Додавання проєктів
 INSERT INTO project (CLIENT_ID, START_DATE, FINISH_DATE)
@@ -38,9 +38,7 @@ VALUES
     (4, '2023-09-05', '2023-12-05'),
     (5, '2023-10-20', '2024-01-20');
 
--- Додавання працівників до проєктів
--- Ви можете змінювати кількість працівників на кожен проєкт за необхідності
--- Тут приклад для додавання від 1 до 5 працівників на кожний проєкт
+
 INSERT INTO project_worker (PROJECT_ID, WORKER_ID)
 SELECT 
     project.ID, worker.ID

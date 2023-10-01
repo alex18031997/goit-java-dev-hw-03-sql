@@ -1,6 +1,11 @@
-SELECT project_name, SUM(salary * duration_months) AS project_cost
-FROM projects
-JOIN project_team ON projects.project_id = project_team.project_id
-JOIN employees ON project_team.employee_id = employees.employee_id
-GROUP BY project_name
-ORDER BY project_cost DESC;
+SELECT
+    C.name AS NAME,
+    (DATEDIFF(month, P.START_DATE, P.FINISH_DATE) * W.SALARY) AS PRICE
+FROM
+    project_worker PW
+JOIN
+    worker W ON PW.WORKER_ID = W.ID
+JOIN
+    project P ON PW.PROJECT_ID = P.ID
+JOIN
+    client C ON P.CLIENT_ID = C.id;
